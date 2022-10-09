@@ -120,23 +120,6 @@ exports.uploadImage = async (req, res, next) => {
   }
 };
 
- //Pagination
-
- exports.books_get_all = async(req,res,next)=>{
-  try{
-    const{ page =1, limit = 10} = req.query;
-    const books = await Book.find()
-    .limit(limit * 1)
-    .skip((page-1)*limit);
-    res.status(200).json({total: books.length,books});
-  } catch (error){
-    console.log(err);
-    res.status(500).json({
-      error: err
-    });
-  }
- };
-  */
  //pagination
 exports.getAllBooks = async (req, res,next) => {
   try {
